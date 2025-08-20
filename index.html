@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <nav>
+        <h1><a id="title" class="navbar-brand" href="#">AI News Platform</a></h1>
+    </nav>
+    <div id="introText" class="text-center mt-5">
+        <h2>Stay updated with the latest AI news and insights.</h2>
+        <p>Search any topic below to get started.</p>
+    </div>
+    <form id="searchBar" class="before d-flex" role="search">
+        <input class="form-control me-2" type="text" id="searchInput" placeholder="Search for news..." name="query">
+        <Button class="btn btn-outline-dark" type="submit">Search</Button>
+    </form>
+    <div id="newsContainer" class="container mt-5">
+        <div class="row" id="newsList"></div>
+    </div>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

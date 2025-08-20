@@ -1,0 +1,31 @@
+body {
+    background-color: #f2f2f2;
+}
+
+nav{
+    background-color: #DDDAD0;
+    padding: 10px;
+}
+
+#title{
+    margin: 20px;
+}
+
+.before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+}
+
+.after {
+    margin: 30px auto;
+    width: 60%;
+}
+
+
+
+.hidden {
+    display: none !important;
+}
