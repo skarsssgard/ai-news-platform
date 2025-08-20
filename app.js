@@ -1,4 +1,4 @@
-const newsAPIKey = "6851e86813c940fd8db108b28deedf70";
+const gnewsAPIKey = "6c659094d729d2491c71ad9b2f7bcd29";
 const nytAPIKey = "RyeSGFvcplrgN8nfPRBAFK9lDxtOntMG";
 const guardianAPIkey = "a25b411b-f4f0-4076-b2e4-e4c1542397c2";
 
@@ -20,14 +20,14 @@ form.addEventListener('submit', async (e) => {
             q: keyword
         }
     }
-    const urlNewsAPI = `https://newsapi.org/v2/top-headlines?q=${keyword}&apiKey=${newsAPIKey}`;
+    const urlGnewsAPI = `https://gnews.io/api/v4/search?q=${keyword}&token=${gnewsAPIKey}`;
     const urlNYTAPI = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${keyword}&api-key=${nytAPIKey}`;
     const urlGuardianAPI = `https://content.guardianapis.com/search?q=${keyword}&api-key=${guardianAPIkey}`;
     try{
-        const responseNewsAPI = await axios.get(urlNewsAPI);
+        const responseGnewsAPI = await axios.get(urlGnewsAPI);
         const responseNYTAPI = await axios.get(urlNYTAPI, config);
         const responseGuardianAPI = await axios.get(urlGuardianAPI, config);
-        getNews(normalizeNewsAPI(responseNewsAPI.data.articles));
+        getNews(normalizeGnews(responseGnewsAPI.data.articles));
         getNews(normalizeNYT(responseNYTAPI.data.response.docs));
         getNews(normalizeGuardian(responseGuardianAPI.data.response.results));
     } catch (error) {
@@ -36,7 +36,7 @@ form.addEventListener('submit', async (e) => {
     form.elements.query.value = '';
 })
 
-const normalizeNewsAPI = (articles) => {
+const normalizeGnews = (articles) => {
     return articles.map(a => ({
         title: a.title,
         timestamp: a.publishedAt,
